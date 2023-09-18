@@ -27,7 +27,7 @@ int	ft_read_string(char **number)
 unsigned long int	ft_product_13(char *number)
 {
 	unsigned long int	prod;
-	int				i;
+	int					i;
 
 	prod = 1;
 	i = 0;
