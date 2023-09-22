@@ -35,13 +35,11 @@ int	main(void)
 {
 	unsigned long long int	i;
 	unsigned long long int	triangle;
-	unsigned long long int	n_divisors;
 
 	i = 1;
 	triangle = 1;
-	n_divisors = 1;
 	while (ft_n_divisors(triangle) <= 500)
 		ft_next_even_triangle(&i, &triangle);
-	printf("%d\n", triangle);
+	printf("%lld\n", triangle);
 	return (0);
 }
