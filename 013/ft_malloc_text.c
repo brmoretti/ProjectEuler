@@ -1,44 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_malloc_matrix.c                                 :+:      :+:    :+:   */
+/*   ft_malloc_text.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brmoretti <brmoretti@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/27 17:54:46 by brmoretti         #+#    #+#             */
-/*   Updated: 2023/09/27 18:26:40 by brmoretti        ###   ########.fr       */
+/*   Created: 2023/09/27 18:27:51 by brmoretti         #+#    #+#             */
+/*   Updated: 2023/09/27 18:42:49 by brmoretti        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-void	ft_free_matrix(int **matrix, int rows)
+void	ft_free_text(char **text, int rows)
 {
 	int	i;
 
 	i = -1;
 	while (++i < rows)
-		free(matrix[i]);
-	free(matrix);
+		free(text[i]);
+	free(text);
 }
 
-int	**ft_malloc_matrix(int cols, int rows)
+char	**ft_malloc_text(int cols, int rows)
 {
-	int	**matrix;
-	int	i;
+	char	**text;
+	int		i;
 
-	matrix = malloc(rows * sizeof(int *));
-	if (matrix == NULL)
+	text = malloc(rows * sizeof(char *));
+	if (text == NULL)
 		return (NULL);
 	i = -1;
 	while (++i < rows)
 	{
-		matrix[i] = malloc(cols * sizeof(int));
-		if (matrix[i] == NULL)
+		text[i] = malloc(cols * sizeof(char));
+		if (text[i] == NULL)
 		{
-			ft_free_matrix(matrix, i - 1);
+			ft_free_text(text, i - 1);
 			return (NULL);
 		}
 	}
-	return (matrix);
+	return (text);
 }
